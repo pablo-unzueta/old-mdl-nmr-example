@@ -3,20 +3,8 @@ from torch import Tensor
 import torch.nn.functional as F
 from torch.nn import Sequential, Linear, ReLU, BatchNorm1d
 import torch_geometric
-from torch_geometric.nn import (
-    Set2Set,
-    global_mean_pool,
-    global_add_pool,
-    global_max_pool,
-    CGConv,
-    MetaLayer,
-    TransformerConv,
-)
-from torch_scatter import scatter_mean, scatter_add, scatter_max, scatter
-from torch_geometric.nn.models.schnet import InteractionBlock
+from torch_geometric.nn import CGConv
 
-
-# CGCNN_NMR
 class CGCNN_NMR(torch.nn.Module):
     def __init__(
         self,
